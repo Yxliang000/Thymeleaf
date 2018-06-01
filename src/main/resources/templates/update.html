@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>form</title>
+</head>
+<body>
+	<form modelAttribute="dto" th:object="${user}" action="/add" method="post">
+		<label for="id">ID:</label>
+		<input th:field="*{id}" name="id" th:value="${user.id}"></input>
+		<br></br>
+		<label for="name">姓名:</label>
+		<input th:field="*{name}" name="name" th:value="${user.name}"></input>
+		<br></br>
+		<label for="ageInput">年龄:</label>
+		<input th:field="*{age}" name="age" th:value="${user.age}"></input>
+		<br></br>
+		<label for="genderInput">性别:</label>
+		<div th:class="${gender=='男'}?'active'">
+		<input type="radio" name="gender" value="男" checked="checked">男</input>
+		<input type="radio" name="gender" value="女">女</input>
+		</div>
+		<div th:class="${gender=='女'}?'active'">
+		<input type="radio" name="gender" value="男">男</input>
+		<input type="radio" name="gender" value="女" checked="checked">女</input>
+		</div>
+		<br></br>
+		<label for="phoneInput">电话:</label>
+		<input th:field="*{phone}" name="phone" th:value="${user.phone}"></input>
+		<br></br>
+		<label for="interest">兴趣:</label>
+		<span th:text="${user.interest}"></span>
+		<br></br>
+		<input type="submit" th:value="Submit"/>
+	</form>
+</body>
+</html>

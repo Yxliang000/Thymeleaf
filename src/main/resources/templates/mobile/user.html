@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>User</title>
+</head>
+<body>
+<div style="margin:auto">
+	
+	<br /><br />
+	
+	
+	<table border="1" cellpadding="3" cellspacing="0" style="width: 100%;margin:auto">
+			<tr>
+				<th colspan="2"><a href="add" th:text="#{Add}"></a></th>
+				<th colspan="2"><a th:href="@{/change?lang=中文}" th:text="#{ch}"></a></th>
+				<th colspan="2"><a th:href="@{/change?lang=英文}" th:text="#{en}"></a></th>
+			</tr>
+			
+			<tr>
+				<th>ID</th>
+				<th th:text="#{name}"></th>
+				<th th:text="#{age}"></th>
+				<th th:text="#{gender}"></th>
+				<th th:text="#{phone}"></th>
+				<th th:text="#{interest}"></th>
+			</tr>
+			<tr th:each="prod:${list}">
+				<td th:text="${prod.id}"></td>
+				<td th:text="${prod.name}"></td>
+				<td th:text="${prod.age}"></td>
+				<td th:text="${prod.gender}"></td>
+				<td th:text="${prod.phone}"></td>
+				<td th:text="${prod.interest}"></td>
+				<td> <a th:href="@{'/update?id='+${prod.id}}">编辑</a></td>
+				<td> <a th:href="@{'/detele?id='+${prod.id}}">删除</a></td>
+			</tr>
+		
+	</table>
+</div>
+	
+</body>
+</html>

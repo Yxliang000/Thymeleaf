@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- <form modelAttribute="dto" th:object="${user}" th:action="@{/sample/forth}" mothod="post">
+		<label for="nameInput">姓名:</label>
+		<input th:field="*{name}" id="nameInput" th:value="${user.name}"></input>
+		<br></br>
+		<label for="ageInput">年龄:</label>
+		<input th:field="*{age}" id="ageInput" th:value="${user.age}"></input>
+		<br></br>
+		<label for="genderInput">性别:</label>
+		<input th:field="*{gender}" id="genderInput" th:value="${user.gender}"></input>
+		<br></br>
+		<label for="phoneInput">电话:</label>
+		<input th:field="*{phone}" id="phoneInput" th:value="${user.phone}"></input>
+		<br></br>
+		<label for="InterestInput">兴趣:</label>
+		<input th:field="*{Interest}" id="phoneInput" th:value="${user.Interest}"></input>
+		<br></br>
+		<input type="submit" th:value="Submit"/>
+	</form> -->
+	<form action="/add" method="post">
+	<label for="id">ID:</label>
+		<input type="text" name="id"></input>
+		<br></br>
+		<label for="name">姓名:</label>
+		<input type="text" name="name"></input>
+		<br></br>
+		<label for="age">年龄:</label>
+		<input type="text" name="age"></input>
+		<br></br>
+		<label for="gender">性别:</label>
+		<input type="radio" name="gender" value="男">男</input>
+		<input type="radio" name="gender" value="女">女</input>
+		<br></br>
+		<label for="phoneInput">电话:</label>
+		<input type="text" name="phone"></input>
+		<br></br>
+		<label for="InterestInput">兴趣:</label>
+		<input type="checkbox" name="interest" value="听音乐">听音乐</input>
+		<input type="checkbox" name="interest" value="踢足球"  >踢足球</input>
+  		<input type="checkbox" name="interest" value="看电影" >看电影</input>
+		<br></br>
+		<input type="submit" th:value="提交"/>
+	</form>
+</body>
+</html>
